@@ -1,13 +1,16 @@
-HTMLFILES=$(patsubst %.md,%.html,$(wildcard */*.md *.md))
+-include .arcaderc
+GAMESRC ?= $(ARCADE)/www
+
+HTMLFILES=$(patsubst %.md,%.html,$(wildcard $(GAMESRC)/*.md $(GAMESRC)/*/*.md))
 
 FILES := robots.txt 404.html index.html $(wildcard css/*) $(wildcard img/*) $(HTMLFILES)
 
 all: $(HTMLFILES)
 
 %.html: %.md
-	cat header.html > $@
+	cat $(ARCADE)/www/header.html > $@
 	markdown $< >> $@
-	cat footer.html >> $@
+	cat $(ARCADE)/www/footer.html >> $@
 
 %.sync: %
 	@mkdir -p $(dir staging/$<)
@@ -15,7 +18,7 @@ all: $(HTMLFILES)
 
 .PHONY: sync
 sync: $(addsuffix .sync,$(FILES))
-	aws s3 sync --acl public-read staging s3://www.century-arcade.org/
+	aws s3 sync --acl public-read staging s3://century-arcade.org/
 
 clean:
 	rm -f $(HTMLFILES)
