@@ -2,8 +2,8 @@
 
 Classic computer games preserved for their future after copyright.
 
-* [History and Mission](about)
+* [About](about)
 * [Games](games)
 * [Technical](src)
-* [Requests For Help (RFHs)](rfh)
+* [Help](rfh)
 

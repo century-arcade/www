@@ -2,8 +2,6 @@
 
 ## Technical Information
   
-  * [Executable Format](format)
-  * [Release Process](process)
-    * Versioning
-    * Metadata Requirements
-  * [Source Code](https://github.com/century-arcade/src)
+  * [Image Format](/format)
+  * [Release Process](/process)
+  * [Source Code on GitHub](https://github.com/century-arcade/src)

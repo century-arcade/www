@@ -20,20 +20,21 @@ BOILERPLATE :=        \
 	robots.txt        \
 	404.html          \
 	index.html        \
-	$(wildcard css/*) \
-	$(wildcard img/*)
+	css/ img/
 
 
 FILES := $(HTML_FILES)  \
 	     $(ZIP_FILES)   \
-	     $(addprefix $(STAGING)/, $(BOILERPLATE)) 
+
+staging: $(addsuffix .staged,$(FILES))
+	cp -R $(BOILERPLATE) $(STAGING)/
 
 %.staged: %
 	mkdir -p $(STAGING)/$(dir $(@:$(WWWSRC)/%=%))
 	cp $* $(STAGING)/$(*:$(WWWSRC)/%=%)
 
 .PHONY: sync
-sync: $(addsuffix .staged,$(FILES))
+sync: staging
 	aws s3 sync --acl public-read $(STAGING) s3://century-arcade.org/
 
 clean:

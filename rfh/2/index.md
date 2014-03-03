@@ -3,12 +3,25 @@
 # Request For Help
 
 ## Summary
-*updated 2014/1/26*
+*updated 2014/3/2*
 
+Sound now works!  Used strace in guest to see that semget was returning
+NOTIMPL, fixed by setting the SYSVIPC kernel config option.
+
+---
 * VICE using SDL using ALSA does not work: sound initialization error
 * tinyplay using raw /dev/pcm I/O plays a sound successfully
 * VICE using alsa-lib: no sound output
 * static-linked aplay (from alsa-utils) does not work:
+
+
+### 
+
+    # aplay -L
+    default:CARD=AudioPCI
+        Ensoniq AudioPCI, ES1370 DAC2/ADC
+        Default Audio Device
+    ...
 
         ALSA lib pcm_dmix.c:985:(snd_pcm_dmix_open) unable to create IPC semaphore
         aplay: main:696: audio open error: Function not implemented
@@ -16,13 +29,6 @@
 ### Debug Image
 
 *to be produced* [BelowTheRoot-c64-debug.iso](BelowTheRoot-c64-debug.iso)
-
-* full busybox, gdb
-* alsaplay->tinyplay, sdlplay->playwave -ggdb
-* sample.wav
-
-        # tinyplay startup.wav    **this works**
-        # aplay startup.wav    **this does not**
 
 ### Does VICE with SDL work?  *NO*
 *2014/1/12*

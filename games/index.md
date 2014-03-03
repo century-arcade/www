@@ -14,15 +14,18 @@ The images available at the links below are for testing purposes only.
 
 ## How to Play
 
-Download and unzip the image, and use the .iso file as the boot CD in any
-popular x86 virtual machine or emulator:
+Download and unzip the image, and use the .iso file as the boot CD in an
+x86 virtual machine or emulator:
 
-### (Windows/Linux) [VMWare Player](https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/6_0)
-### (Windows/Mac/Linux) [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
-### (Linux) [qemu](http://wiki.qemu.org/Download)
+* [qemu](http://wiki.qemu.org/Download) (Linux)
 
-    $ unzip BelowTheRoot-c64-0.71a3.izo.zip
-    $ qemu-system-i386 -cdrom BelowTheRoot-c64.iso
+        $ unzip BelowTheRoot-c64-0.75a4.izo.zip
+        $ QEMU_AUDIO_DRV=alsa qemu-system-i386 -soundhw all -cdrom BelowTheRoot-c64.iso
+
+* ~~[VMWare Player](https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/6_0) (Windows/Linux)~~ (not working yet)
+
+* ~~[Virtualbox](https://www.virtualbox.org/wiki/Downloads) (Windows/Mac/Linux)~~ (not working yet)
+
 
 ## Source Code
 
