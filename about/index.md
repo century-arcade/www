@@ -1,47 +1,58 @@
 # The Century Arcade
 
-## History
-
-In 2012 while Megan was on safari in Africa, to soothe my heartache I played a
-game called Below The Root, which I loved playing as a kid.  At the time I
-didn't know that it's one of the first graphical adventure games, and
-well-loved by many other players too.  I spent too many hours playing it, and
-fell in love with it again: this is a quality game, and quite remarkable
-considering its time.
-
-I wanted to show Megan this wonderful game when she returned; maybe she'd even
-want to play it for a few hours.  So I tried to put together a reasonable
-recreation of the Commodore 64 version, which had more colors and polyphonic
-sounds.  With all of the technology and open source I had access to, I thought
-it would be reasonably straightforward.  Instead it was frustrating and
-ultimately pretty disappointing.
-
-The Century Arcade is the result of that frustration.
-
 ## Mission
 
-The Century Arcade restores old, bitrotten games, and produces modern
-executable images suitable for playing in decades to come.
+#### To produce modern executable images of old, bitrotten games, expected to be playable for decades to come.
 
-The Arcade will only distribute images to the public when it is legally allowed
-to do so (i.e. when permission has been granted or licensed, or the copyrighted
-content has ascended into the public domain).  Until then, the image is stored
-in private cloud storage, which is maintained by a prepaid fund.
+* **Curated Quality**: The experience of booting an image and playing the game is carefully tuned, to be as close to the original experience as is reasonable while still keeping the game playable in a modern setting.  
 
-Released images are deliberately constructed to likely still be functional in
-future virtual machines and emulators.
+* **Ready-to-play**: No operating system or other software is required; the
+image itself is a bootable CD/DVD that contains everything required to play the
+game.  No instructions needed other than those necessary to play the game
+itself.
 
-## Want to help?
+* **Durable Construction**: The [Century Executable Format](/src/format) is engineered to be executable on the most stable and widespread virtual hardware platform: the x86 PC.  
 
-The process for building images is open and designed to be reasonably easy for
-other people to contribute.  You could curate an image of your favorite game,
-[beta test unreleased game images](/games), or [help fix a technical issue](/rfh).
+* **Open Source**: The entire build process is automated and made available for public usage and improvement.  See [Technical Information](/src).
 
-## Source 
+* **Respect for Copyright**: For games whose copyright has been established, the Century Arcade will pay to store the images in redundant storage until they ascend into the public domain.
 
-All components are open source with reasonable licenses.  The scripts and configurations that produce these images are at [github.com/century-arcade/src](github.com/century-arcade/src).
+* **Longevity**: The Century Arcade itself will survive long enough to release its images into the public domain.
 
-#### Founder
+## History
 
-* [Saul Pwanson](http://pwanson.com), curator and digital embalmer
+*[Saul Pwanson](http://pwanson.com), curator and digital embalmer*
+
+As a kid, I loved playing a game called [Below The Root](http://en.wikipedia.org/wiki/Below_the_Root_%28video_game%29).  In 1984, it
+was one of the first graphical adventure games and an author-endorsed ending to
+a fantasy trilogy from the 70s.  Not that I knew that at the time, it was just
+a fun game.
+
+In 2012, my girlfriend went to Africa for a few months, and having too much
+time to myself, I started going through some files, and found the old
+hand-drawn maps of *Below The Root* that I had made as a kid.  I had such fond
+memories of that game, so I decided to find it and play it again.
+
+I played a PC version like I had as a kid (using DosBox), until I learned that
+the Commodore 64 version had better graphics and sound.  I figured
+it would be an instant upgrade to 8-bit HD, with just a quick substitution of
+emulator and game binaries.
+
+It was not that easy.  I had to upgrade the emulator, configure it properly,
+and try several different images--the third image appeared to work but then
+crashed 10 minutes into the game.  Even in the best case, there were annoying
+disk swap requests and load delays between screens.  After hours of frustration
+with the C64 version, the experience was pretty disappointing.
+
+So I wanted to see if I could make a single binary that would work on existing
+mainstream computers, today; that did not depend on an OS or any other software
+that might not be available in the future; and that would boot directly into
+the game, ready-to-play (like the original PC version did).  How fast and small
+could it be?
+
+*[As of February 2014, the test image for [*Below The
+Root*](/games/BelowTheRoot) is under 6MB and boots to the game in under 15
+seconds.  I hope to fix the remaining issues and [release](/process) this
+streamlined image to the Century Arcade by August 2014, which is the 30th
+anniversary of its original release.]*
 

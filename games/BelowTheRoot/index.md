@@ -30,6 +30,6 @@ Sound is now working.
 The joystick is emulated using the arrow keys for direction and the spacebar as
 the trigger.
 
-The game is ready to play in 12 seconds.
+The game is ready to play in 15 seconds.
 
 
