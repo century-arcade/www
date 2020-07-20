@@ -1,6 +1,6 @@
 -include .arcaderc
 
-WWWSRC ?= $(ARCADE)/www
+WWWSRC ?= . # $(ARCADE)/www
 
 -include $(WWWSRC)/BUILD
 
@@ -12,9 +12,9 @@ STAGING = $(WWWSRC)/staging
 all: $(HTML_FILES)
 
 %.html: %.md
-	cat $(ARCADE)/www/header.html > $@
+	cat $(WWWSRC)/header.html > $@
 	markdown $< >> $@
-	cat $(ARCADE)/www/footer.html >> $@
+	cat $(WWWSRC)/footer.html >> $@
 
 BOILERPLATE :=        \
 	robots.txt        \
